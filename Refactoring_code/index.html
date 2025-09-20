@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Pricing Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        .pricing {
+            width: 320px;
+            background: linear-gradient(145deg, #ffffff, #f5f5f5);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .popular {
+            border: 2px solid #4e54c8;
+            transform: scale(1.05);
+        }
+        
+        .popular .badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: #4e54c8;
+            color: white;
+            padding: 5px 40px;
+            font-size: 14px;
+            font-weight: 600;
+            transform: rotate(45deg);
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 42px;
+            font-weight: 800;
+            color: #4e54c8;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .price::before {
+            content: '$';
+            font-size: 22px;
+            position: relative;
+            top: -18px;
+            left: -5px;
+        }
+        
+        .price::after {
+            content: '/month';
+            font-size: 16px;
+            font-weight: 500;
+            color: #777;
+            position: absolute;
+            bottom: 8px;
+            right: -50px;
+        }
+        
+        .description {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        
+        .features {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .features li:last-child {
+            border-bottom: none;
+        }
+        
+        .features i {
+            color: #4e54c8;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .btn {
+            background: linear-gradient(to right, #4e54c8, #8f94fb);
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(78, 84, 200, 0.3);
+        }
+        
+        .btn:hover {
+            background: linear-gradient(to right, #3f44af, #7e82e0);
+            box-shadow: 0 8px 20px rgba(78, 84, 200, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #4e54c8;
+            color: #4e54c8;
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: #4e54c8;
+            color: white;
+        }
+        
+        .discount {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .popular {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pricing-container">
+        <!-- Basic Plan -->
+        <div class="pricing">
+            <h2 class="title">Basic Plan</h2>
+            <div class="price">9.99</div>
+            <p class="description">Perfect for individuals and small projects</p>
+            
+            <ul class="features">
+                <li><i class="fas fa-check-circle"></i> 1 GB Storage</li>
+                <li><i class="fas fa-check-circle"></i> Basic Support</li>
+                <li><i class="fas fa-check-circle"></i> All Core Features</li>
+                <li><i class="fas fa-times-circle" style="color: #ff6b6b;"></i> Advanced Analytics</li>
+                <li><i class="fas fa-times-circle" style="color: #ff6b6b;"></i> 24/7 Priority Support</li>
+            </ul>
+            
+            <button class="btn">Start Trial</button>
+            <p class="discount">Save 10% with annual billing</p>
+        </div>
+        
+        <!-- Popular Plan -->
+        <div class="pricing popular">
+            <div class="badge">POPULAR</div>
+            <h2 class="title">Professional Plan</h2>
+            <div class="price">19.99</div>
+            <p class="description">Ideal for growing businesses and teams</p>
+            
+            <ul class="features">
+                <li><i class="fas fa-check-circle"></i> 10 GB Storage</li>
+                <li><i class="fas fa-check-circle"></i> Priority Support</li>
+                <li><i class="fas fa-check-circle"></i> All Core Features</li>
+                <li><i class="fas fa-check-circle"></i> Advanced Analytics</li>
+                <li><i class="fas fa-times-circle" style="color: #ff6b6b;"></i> 24/7 Priority Support</li>
+            </ul>
+            
+            <button class="btn">Get Started</button>
+            <p class="discount">Save 15% with annual billing</p>
+        </div>
+        
+        <!-- Enterprise Plan -->
+        <div class="pricing">
+            <h2 class="title">Enterprise Plan</h2>
+            <div class="price">49.99</div>
+            <p class="description">For large organizations with advanced needs</p>
+            
+            <ul class="features">
+                <li><i class="fas fa-check-circle"></i> Unlimited Storage</li>
+                <li><i class="fas fa-check-circle"></i> 24/7 Priority Support</li>
+                <li><i class="fas fa-check-circle"></i> All Core Features</li>
+                <li><i class="fas fa-check-circle"></i> Advanced Analytics</li>
+                <li><i class="fas fa-check-circle"></i> Custom Integrations</li>
+            </ul>
+            
+            <button class="btn btn-outline">Contact Sales</button>
+            <p class="discount">Custom pricing available</p>
+        </div>
+    </div>
+
+    <script>
+        // Add hover effects and animations
+        document.querySelectorAll('.pricing').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.15)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                if (!card.classList.contains('popular')) {
+                    card.style.transform = 'translateY(0)';
+                    card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
+                } else {
+                    card.style.transform = 'scale(1.05)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
